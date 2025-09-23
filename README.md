@@ -15,9 +15,7 @@ Se trabajó mediante subsistemas que permitieron segmentar el trabajo en diversa
 ## 2. Diagramas de bloque 
 Como se mencionó anteriormente, el trabajo fue realizado mediante la implementación de subsistemas, para ello, se utilizaron diagramas de bloques los cuales optimizan la visualización del flujo de tareas en el orden en el que deben realizarse. Además, facilita la identifiación de entradas y salidas en el sistema. En la figura 1 se muestra el diagrama de bloques implementado. 
 <center>
-  **Figura 1**: Diagrama de bloques 
-![Diagrama de bloques](Escritorio/diagrama de bloques.png)
-*Figura 1: Interconexión de subsistemas del corrector de errores*
+ ![Diagrama de bloques ](diagrama de bloques.png)
 
 </center>
 
