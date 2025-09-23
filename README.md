@@ -17,7 +17,7 @@ Como se mencionó anteriormente, el trabajo fue realizado mediante la implementa
 
 <center>
  ![Diagrama de bloques ](diagrama de bloques.png)
-</center> <br />
+</center>  <br />
 
 El sistema del codificador de Hamming (7,4) recibe 4 bits de información (i3,i2,i1,i0), luego genera los bits de chequeo (c2,c1,c0), en el bloque de SED o DED calcula el síndrome (s4,s2,s1) para finalmente mostrar los resultados enb los LEDs y el display de 7 segmentos a través de un multiplexor. 
 
