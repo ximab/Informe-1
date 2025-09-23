@@ -14,10 +14,11 @@ Se trabajó mediante subsistemas que permitieron segmentar el trabajo en diversa
 6. Subsistema de despliegue de palabra corregida en display de 7 segmentos: convierte la palabra corregida a formato hexadecimal para que se pueda visualizar en el display. 
 ## 2. Diagramas de bloque 
 Como se mencionó anteriormente, el trabajo fue realizado mediante la implementación de subsistemas, para ello, se utilizaron diagramas de bloques los cuales optimizan la visualización del flujo de tareas en el orden en el que deben realizarse. Además, facilita la identifiación de entradas y salidas en el sistema. En la figura 1 se muestra el diagrama de bloques implementado. 
+
 <center>
  ![Diagrama de bloques ](diagrama de bloques.png)
+</center> <br />
 
-</center>
-
+El sistema del codificador de Hamming (7,4) recibe 4 bits de información (i3,i2,i1,i0), luego genera los bits de chequeo (c2,c1,c0), en el bloque de SED o DED calcula el síndrome (s4,s2,s1) para finalmente mostrar los resultados enb los LEDs y el display de 7 segmentos a través de un multiplexor. 
 
 
