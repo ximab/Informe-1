@@ -20,5 +20,39 @@ Como se mencionó anteriormente, el trabajo fue realizado mediante la implementa
 </center>  <br />
 
 El sistema del codificador de Hamming (7,4) recibe 4 bits de información (i3,i2,i1,i0), luego genera los bits de chequeo (c2,c1,c0), en el bloque de SED o DED calcula el síndrome (s4,s2,s1) para finalmente mostrar los resultados enb los LEDs y el display de 7 segmentos a través de un multiplexor. 
+## 3. Ecuaciones booleanas de correción de error
+Para poder ejecutar el circuito con SED y DED, es necesario optimizar las ecuaciones booleanas que determinan, tanto la posición del error, como su correción, además, la simplificación de las mismas permite reducir el número de compuertas lógicas necesarias, y así mejorar su eficiencia. 
+1. Código de Hamming:
+   
+c2 = i3 ⊕ i2 ⊕ i1
+
+c1 = i3 ⊕ i2 ⊕ io  
+
+c0 = i3 ⊕ i4 ⊕ i0  
+
+2. Decodificador:
+   
+c2 = i3 ⊕ i2 ⊕ i1 ⊕ c2
+
+c1 = i3 ⊕ i2 ⊕ io ⊕ c1
+
+c0 = i3 ⊕ i1 ⊕ i0 ⊕ c0
+
+3. Verificador de error y detector de error:
+
+Síndrome: s1,s2,s4
+
+s1 = c0 ⊕ i0 
+
+s2 = c1 ⊕ i1
+
+s3 = c2 ⊕ i3 
+
+Paridad total = c0 ⊕ c1 ⊕ c2 ⊕ i0 ⊕ i2 ⊕ i3 ⊕ i1 
+
+## 4. Ecuaciones booleanas de despliegue de palabras corregidas con luces LED
+(mapa de karnaugh) 
+
+
 
 
