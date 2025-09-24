@@ -51,8 +51,22 @@ s3 = c2 ⊕ i3
 Paridad total = c0 ⊕ c1 ⊕ c2 ⊕ i0 ⊕ i2 ⊕ i3 ⊕ i1 
 
 ## 4. Ecuaciones booleanas de despliegue de palabras corregidas con luces LED
-(mapa de karnaugh) 
-
+A través de las ecuaciones booleanas y simplificación mediatne mapas de Karnaugh se optimiza el funcionamiento del display, el cual requiere una función específico que convierte el código binario de 4 a la representación hexadecimal correspondiente. 
+Despliegue de la palabra corregido: 
+<center>
+| D3,0 	| Sa 	| Sb 	| Sc 	| Sd 	| Se 	| Sf 	| Sg 	|
+|---	|---	|---	|---	|---	|---	|---	|---	|
+| 0000 	| 1 	| 1 	| 1 	| 1 	| 1 	| 1 	| 0 	|
+| 0001 	| 0 	| 1 	| 1 	| 0 	| 0 	| 0 	| 0 	|
+| 0010 	| 1 	| 1 	| 0 	| 1 	| 1 	| 0 	| 1 	|
+| 0011 	| 1 	| 1 	| 1 	| 1 	| 0 	| 0 	| 1 	|
+| 0100 	| 0 	| 1 	| 1 	| 0 	| 0 	| 1 	| 1 	|
+| 0101 	| 1 	| 0 	| 1 	| 1 	| 0 	| 1 	| 1 	|
+| 0110 	| 1 	| 0 	| 1 	| 1 	| 1 	| 1 	| 1 	|
+| 0111 	| 1 	| 1 	| 1 	| 0 	| 0 	| 0 	| 0 	|
+| 1000 	| 1 	| 1 	| 1 	| 1 	| 1 	| 1 	| 1 	|
+| 1001 	| 1 	| 1 	| 1 	| 0 	| 0 	| 1 	| 1 	|
+</center>
 
 
 
