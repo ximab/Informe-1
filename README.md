@@ -137,12 +137,8 @@ El circuito se armó tomando en cuenta la estructura interna de la compuerta com
 
 ![Estructura interna del Hex inversor TTL 74LS04](images/inversor.png) 
 
-La fuente de alimentación se configuró a +5V, en este caso se conectó al pin 14 y GND al pin número 7. Para la configuración de los inversores en serie, se siguió el diagrama de manera que tanto para el caso de 3 inversores, como el de 5, las conexiones fueran correctas. Se conectaron ambos canales del osciloscopio para poder observar tanto la salida como la entrada y se condiguró a 
+La fuente de alimentación se configuró a +5V, en este caso se conectó al pin 14 y GND al pin número 7. Para la configuración de los inversores en serie, se siguió el diagrama de manera que tanto para el caso de 3 inversores, como el de 5, las conexiones fueran correctas. Se conectaron ambos canales del osciloscopio para poder observar tanto la salida como la entrada y se configuró la escala de manera adecuada para poder visualizar un periodo completo. Las mediciones fueron realizadas mediante los cursos que posee el osciloscopio
 
 
-2.3.2. Metodología de Medición
-Osciloscopio: Canal A conectado a la salida del último inversor
-
-Configuración: 1V/div, escala de tiempo ajustada para visualizar periodo completo
 
 Mediciones: Periodo (T) usando cursores al 50% de la excursión de voltaje
