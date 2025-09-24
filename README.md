@@ -128,10 +128,15 @@ Inicialemente, los problemas consistieron en la conexión del circuito como tal,
 ## Descripción general
 La segunda parte del proyecto consistió en armar un oscilador de anillo para determinar experimentalmente el tiempo de propagación (t_pd) de los inversores TTL 74LS04 mediante la medición del periodo. 
 ## Equipo utilizado: 
+
 -Hex inversor TTL 74LS04
+
 -Fuente de alimentación 
+
 -Osciloscopio digital
+
 -Cables y protoboard
+
 ## Procedimiento: 
 El circuito se armó tomando en cuenta la estructura interna de la compuerta como se muestra en el siguiente diagrama: 
 
@@ -141,4 +146,4 @@ La fuente de alimentación se configuró a +5V, en este caso se conectó al pin 
 
 
 
-Mediciones: Periodo (T) usando cursores al 50% de la excursión de voltaje
+
