@@ -1,6 +1,6 @@
 # Informe Proyecto corto I: Diseño digital combinacional en dispositivos programables 
-## Jiahui Zhong Zhe 
-## Ximena Araya Brenes 
+### Jiahui Zhong Zhe 
+### Ximena Araya Brenes 
 ## Descripción general 
 La primera parte consiste en la implementación de un algoritmo de Hamming que permita identificar y corregir errores en palabras de 4 bits. Se realizó trabajando el código de System Verilog en Visual Studio Code, para luego descargarlo en el circuito armado con la FPGA. Además, se trabajó mediante subsistemas, como lo son aquellos para codificar o decodificar, entre otros. La segunda parte del proyecto es un oscilador de anillo, construido con inversores conectados en serie, con el fin de poder analizar con el osciloscopio la forma de su onda y así determinar el tiempo de subida y de bajada. 
 ## 1. Funcionamiento y descripción del circuito 
@@ -15,9 +15,8 @@ Se trabajó mediante subsistemas que permitieron segmentar el trabajo en diversa
 ## 2. Diagramas de bloque 
 Como se mencionó anteriormente, el trabajo fue realizado mediante la implementación de subsistemas, para ello, se utilizaron diagramas de bloques los cuales optimizan la visualización del flujo de tareas en el orden en el que deben realizarse. Además, facilita la identifiación de entradas y salidas en el sistema. En la figura 1 se muestra el diagrama de bloques implementado. 
 
-<center>
  ![Diagrama de bloques ](diagrama de bloques.png)
-</center>  <br />
+
 
 El sistema del codificador de Hamming (7,4) recibe 4 bits de información (i3,i2,i1,i0), luego genera los bits de chequeo (c2,c1,c0), en el bloque de SED o DED calcula el síndrome (s4,s2,s1) para finalmente mostrar los resultados enb los LEDs y el display de 7 segmentos a través de un multiplexor. 
 ## 3. Ecuaciones booleanas de correción de error
@@ -80,7 +79,41 @@ Sa = i3 + i2i0 + (i2i0)´ + i1
 
 ## 5. Simulación del funcionamiento del circuito 
 Los subsistemas del funcionamiento completo del circuito fueron probados medidante un teste bench que abarca desde el algoritmo de Hamming hasta el display de los 7 segmentos. 
-El sistema completo fue validado mediante un testbench exhaustivo que prueba todos los subsistemas integrados, desde la codificación Hamming hasta la visualización en displays de 7 segmentos. Las pruebas incluyen casos de 0, 1 y 2 errores para verificar el funcionamiento correcto del algoritmo SEC-DED.
+### Codificador de entrada (7,4):
 
+Data=0000 -> Enc=0000000 Parity=0  
 
+Data=1101 -> Enc=1100110 Parity=0  
 
+Data=1111 -> Enc=1111111 Parity=1  
+
+### Caso 1: Double error detection:
+
+Recibido=11111111 -> Corregido=1111, OneError=0, TwoError=1  
+
+### Caso 2: Single error detection:
+
+Recibido=11111110 -> Corregido=0111, OneError=1, TwoError=0  
+
+### Ejemplo: 1010
+
+Sin errores: 
+
+Recibido=11010010 -> Decodificado=1010, Err1=0, Err2=1
+
+Un error: 
+
+Recibido=11010110 -> Decodificado=1011, Err1=1, Err2=0
+
+Dos errores: 
+
+Recibido=11011110 -> Decodificado=1011, Err1=0, Err2=1
+
+Tabla de resultados: 
+| Caso      | Entrada  | Salida | OneError | TwoError |
+|-----------|----------|--------|----------|----------|
+| 0 errores | 11010010 | 1010   | 0        | 1        |
+| 1 error   | 11010110 | 1011   | 1        | 0        |
+| 2 errores | 11111100 | 1011   | 0        | 1        |
+
+## 6. Consumo de recursos 
