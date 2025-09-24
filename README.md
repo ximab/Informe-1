@@ -142,7 +142,24 @@ El circuito se armó tomando en cuenta la estructura interna de la compuerta com
 
 ![Estructura interna del Hex inversor TTL 74LS04](images/inversor.png) 
 
-La fuente de alimentación se configuró a +5V, en este caso se conectó al pin 14 y GND al pin número 7. Para la configuración de los inversores en serie, se siguió el diagrama de manera que tanto para el caso de 3 inversores, como el de 5, las conexiones fueran correctas. Se conectaron ambos canales del osciloscopio para poder observar tanto la salida como la entrada y se configuró la escala de manera adecuada para poder visualizar un periodo completo. Las mediciones fueron realizadas mediante los cursos que posee el osciloscopio
+La fuente de alimentación se configuró a +5V, en este caso se conectó al pin 14 y GND al pin número 7. Para la configuración de los inversores en serie, se siguió el diagrama de manera que tanto para el caso de 3 inversores, como el de 5, las conexiones fueran correctas. Se conectaron ambos canales del osciloscopio para poder observar tanto la salida como la entrada y se configuró la escala de manera adecuada para poder visualizar un periodo completo. Las mediciones fueron realizadas mediante los cursos que posee el osciloscopio, se obtuvieron los siguientes resultados: 
+
+**Periodo:** T = 4,224ns
+
+**Voltaje máximo:** V_max = 328mV
+
+**Volatje mínimo:** V_min = -472mV 
+
+
+### Cálculo del retardo de propagación:
+
+\[ t_{PD} = \frac{T}{2 \times n} = \frac{4.224 \, \text{ns}}{2 \times 3} = 0.704 \, \text{ns} \]
+
+Donde:
+- \( t_{PD} \): Retardo de propagación promedio
+- \( T \): Periodo medido (4.224 ns)
+- \( n \): Número de inversores (3)
+
 
 
 
