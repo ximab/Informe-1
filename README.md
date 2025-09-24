@@ -15,7 +15,7 @@ Se trabajó mediante subsistemas que permitieron segmentar el trabajo en diversa
 ## 2. Diagramas de bloque 
 Como se mencionó anteriormente, el trabajo fue realizado mediante la implementación de subsistemas, para ello, se utilizaron diagramas de bloques los cuales optimizan la visualización del flujo de tareas en el orden en el que deben realizarse. Además, facilita la identifiación de entradas y salidas en el sistema. En la figura 1 se muestra el diagrama de bloques implementado. 
 
- ![Diagrama de bloques ](diagrama de bloques.png)
+![Diagrama de bloques](images/diagrama.png) (Imagen diagrama de bloques) 
 
 
 El sistema del codificador de Hamming (7,4) recibe 4 bits de información (i3,i2,i1,i0), luego genera los bits de chequeo (c2,c1,c0), en el bloque de SED o DED calcula el síndrome (s4,s2,s1) para finalmente mostrar los resultados enb los LEDs y el display de 7 segmentos a través de un multiplexor. 
@@ -117,3 +117,32 @@ Tabla de resultados:
 | 2 errores | 11111100 | 1011   | 0        | 1        |
 
 ## 6. Consumo de recursos 
+Según lo desplegado en el programa de system verilog en cuánto a utilización de los recursos, estos corresponden a un 0.31%, es decir se implementan 27/8640 células. Su velocidad máxima es de 26.84 MHz y su consumo de potencia estático es de 3mW. Por lo tanto, el circuito implementado es eficiente y de bajo consumo energético. 
+
+![Consumo de recursos](images/consumo.png) (Imagen diagrama de bloques) 
+
+## 7. Problemas y resoluciones 
+Inicialemente, los problemas consistieron en la conexión del circuito como tal, ya que los pines colocados no correspondían a los pines programados, por lo que se tuvo que montar y desmontar en diversidad de ocasiones. Posteriormente, el problema consistió en que, a pesar de que el test bench corría correctamente, el display no mostraba el número correcto correspondiente a la posición del error, sino que, siempre mostraba la misma cifra. Por úlitmo, existe un "desfase" de 1 en el síndrome del test bench, ya que, este despliega una cifra después de la posición del error en la palabra, es decir, si el error está en la posición 4 este despliega el 5. 
+
+# Parte 2: Oscilador de anillo 
+## Descripción general
+La segunda parte del proyecto consistió en armar un oscilador de anillo para determinar experimentalmente el tiempo de propagación (t_pd) de los inversores TTL 74LS04 mediante la medición del periodo. 
+## Equipo utilizado: 
+-Hex inversor TTL 74LS04
+-Fuente de alimentación 
+-Osciloscopio digital
+-Cables y protoboard
+## Procedimiento: 
+El circuito se armó tomando en cuenta la estructura interna de la compuerta como se muestra en el siguiente diagrama: 
+
+![Estructura interna del Hex inversor TTL 74LS04](images/inversor.png) 
+
+La fuente de alimentación se configuró a +5V, en este caso se conectó al pin 14 y GND al pin número 7. Para la configuración de los inversores en serie, se siguió el diagrama de manera que tanto para el caso de 3 inversores, como el de 5, las conexiones fueran correctas. Se conectaron ambos canales del osciloscopio para poder observar tanto la salida como la entrada y se condiguró a 
+
+
+2.3.2. Metodología de Medición
+Osciloscopio: Canal A conectado a la salida del último inversor
+
+Configuración: 1V/div, escala de tiempo ajustada para visualizar periodo completo
+
+Mediciones: Periodo (T) usando cursores al 50% de la excursión de voltaje
