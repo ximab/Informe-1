@@ -52,8 +52,9 @@ Paridad total = c0 ⊕ c1 ⊕ c2 ⊕ i0 ⊕ i2 ⊕ i3 ⊕ i1
 
 ## 4. Ecuaciones booleanas de despliegue de palabras corregidas con luces LED
 A través de las ecuaciones booleanas y simplificación mediatne mapas de Karnaugh se optimiza el funcionamiento del display, el cual requiere una función específico que convierte el código binario de 4 a la representación hexadecimal correspondiente. 
+
 Despliegue de la palabra corregido: 
-<center>
+
 | D3,0 	| Sa 	| Sb 	| Sc 	| Sd 	| Se 	| Sf 	| Sg 	|
 |---	|---	|---	|---	|---	|---	|---	|---	|
 | 0000 	| 1 	| 1 	| 1 	| 1 	| 1 	| 1 	| 0 	|
@@ -66,7 +67,20 @@ Despliegue de la palabra corregido:
 | 0111 	| 1 	| 1 	| 1 	| 0 	| 0 	| 0 	| 0 	|
 | 1000 	| 1 	| 1 	| 1 	| 1 	| 1 	| 1 	| 1 	|
 | 1001 	| 1 	| 1 	| 1 	| 0 	| 0 	| 1 	| 1 	|
-</center>
+
+Simplificación con Mapa de Karnaugh: 
+| i1,i0/i3,i2 	| 00 	| 01 	| 11 	| 10 	|
+|---	|---	|---	|---	|---	|
+| 00 	| 1 	| 0 	| x 	| 1 	|
+| 01 	| 0 	| 1 	| x 	| 1 	|
+| 11 	| 1 	| 1 	| x 	| x 	|
+| 10 	| 1 	| 1 	| x 	| x 	|
+
+Sa = i3 + i2i0 + (i2i0)´ + i1 
+
+## 5. Simulación del funcionamiento del circuito 
+Los subsistemas del funcionamiento completo del circuito fueron probados medidante un teste bench que abarca desde el algoritmo de Hamming hasta el display de los 7 segmentos. 
+El sistema completo fue validado mediante un testbench exhaustivo que prueba todos los subsistemas integrados, desde la codificación Hamming hasta la visualización en displays de 7 segmentos. Las pruebas incluyen casos de 0, 1 y 2 errores para verificar el funcionamiento correcto del algoritmo SEC-DED.
 
 
 
