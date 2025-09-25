@@ -15,8 +15,9 @@ Se trabajó mediante subsistemas que permitieron segmentar el trabajo en diversa
 ## 2. Diagramas de bloque 
 Como se mencionó anteriormente, el trabajo fue realizado mediante la implementación de subsistemas, para ello, se utilizaron diagramas de bloques los cuales optimizan la visualización del flujo de tareas en el orden en el que deben realizarse. Además, facilita la identifiación de entradas y salidas en el sistema. En la figura 1 se muestra el diagrama de bloques implementado. 
 
-![Diagrama de bloques](images/diagrama.png) (Imagen diagrama de bloques) 
+![Diagrama de bloques](images/diagrama.png) 
 
+*Figura 1: Diagrama de bloques*
 
 El sistema del codificador de Hamming (7,4) recibe 4 bits de información (i3,i2,i1,i0), luego genera los bits de chequeo (c2,c1,c0), en el bloque de SED o DED calcula el síndrome (s4,s2,s1) para finalmente mostrar los resultados enb los LEDs y el display de 7 segmentos a través de un multiplexor. 
 ## 3. Ecuaciones booleanas de correción de error
@@ -119,7 +120,9 @@ Tabla de resultados:
 ## 6. Consumo de recursos 
 Según lo desplegado en el programa de system verilog en cuánto a utilización de los recursos, estos corresponden a un 0.31%, es decir se implementan 27/8640 células. Su velocidad máxima es de 26.84 MHz y su consumo de potencia estático es de 3mW. Por lo tanto, el circuito implementado es eficiente y de bajo consumo energético. 
 
-![Consumo de recursos](images/consumo.png) (Imagen diagrama de bloques) 
+![Consumo de recursos](images/consumo.png) 
+
+*Figura 2: Consumo de recursos*
 
 ## 7. Problemas y resoluciones 
 Inicialemente, los problemas consistieron en la conexión del circuito como tal, ya que los pines colocados no correspondían a los pines programados, por lo que se tuvo que montar y desmontar en diversidad de ocasiones. Posteriormente, el problema consistió en que, a pesar de que el test bench corría correctamente, el display no mostraba el número correcto correspondiente a la posición del error, sino que, siempre mostraba la misma cifra. Por úlitmo, existe un "desfase" de 1 en el síndrome del test bench, ya que, este despliega una cifra después de la posición del error en la palabra, es decir, si el error está en la posición 4 este despliega el 5. 
@@ -142,7 +145,9 @@ El circuito se armó tomando en cuenta la estructura interna de la compuerta com
 
 ![Estructura interna del Hex inversor TTL 74LS04](images/inversor.png) 
 
-La fuente de alimentación se configuró a +5V, en este caso se conectó al pin 14 y GND al pin número 7. Para la configuración de los inversores en serie, se siguió el diagrama de manera que tanto para el caso de 3 inversores, como el de 5, las conexiones fueran correctas. Se conectaron ambos canales del osciloscopio para poder observar tanto la salida como la entrada y se configuró la escala de manera adecuada para poder visualizar un periodo completo. Las mediciones fueron realizadas mediante los cursos que posee el osciloscopio, se obtuvieron los siguientes resultados: 
+*Figura 3: Estructura interna del Hex Inversor TTL 74LS04*
+
+La fuente de alimentación se configuró a +5V, en este caso se conectó al pin 14 y GND al pin número 7. Para la configuración de los inversores en serie, se siguió el diagrama de manera que tanto para el caso de 3 inversores, como el de 5, las conexiones fueran correctas. Se conectaron ambos canales del osciloscopio para poder observar tanto la salida como la entrada y se configuró la escala de manera adecuada para poder visualizar un periodo completo. Las mediciones fueron realizadas mediante los cursos que posee el osciloscopio, se obtuvieron los siguientes resultados para el oscilador de 3 inversores: 
 
 **Periodo:** T = 4,224ns
 
@@ -150,17 +155,72 @@ La fuente de alimentación se configuró a +5V, en este caso se conectó al pin 
 
 **Volatje mínimo:** V_min = -472mV 
 
-
 ### Cálculo del retardo de propagación:
 
-\[ t_{PD} = \frac{T}{2 \times n} = \frac{4.224 \, \text{ns}}{2 \times 3} = 0.704 \, \text{ns} \]
+tₚₓ = T / (2 × n) = 4.224 ns / (2 × 3) = 0.704 ns
 
 Donde:
-- \( t_{PD} \): Retardo de propagación promedio
-- \( T \): Periodo medido (4.224 ns)
-- \( n \): Número de inversores (3)
+- tₚₓ: Retardo de propagación promedio
+- T: Periodo medido (4.224 ns) 
+- n: Número de inversores (3)
 
+Además, se adjunta el periodo obtenido en las imágenes posteriores: 
 
+![Periodo oscilador de 3 inversores](images/osciloscopio1.png)
 
+*Figura 4: Oscilador de anillo con 3 inversores*
 
+![Periodo oscilador de 5 inversores](images/osciloscopio2.png) 
 
+*Figura 5: Oscilador de anillo con 3 inversores*
+
+Para el oscilador de 5 inversores se puede verificar que: 
+
+**Periodo:** T = 7,04ns
+
+**Frecuencia:** 142 MHz
+
+T_teórico = 2 × n × t_PD
+          = 2 × 5 × 0.704 ns
+          = 7.04 ns
+## Análisis de resultados 
+Los resultados obtenidos del tiempo de propagación corresponden a 0,70ns, lo cual es menor de lo esperado para un inversor de este tipo (9-15ns), esto se puede deber a diversas cargas como lo son una mala configuración o bien capacitancias parásitas. 
+## Bitácora 
+
+### Bitácora Jiahui Zhong Zhe 
+
+![Bitácora Jiahui 1](images/jiahui1.png) 
+
+![Bitácora Jiahui 2](images/jiahui2.png) 
+
+![Bitácora Jiahui 3](images/jiahui3.png) 
+
+![Bitácora Jiahui 4](images/jiahui4.png) 
+
+![Bitácora Jiahui 5](images/jiahui5.png) 
+
+![Bitácora Jiahui 6](images/jiahui6.png) 
+
+![Bitácora Jiahui 7](images/jiahui7.png) 
+
+![Bitácora Jiahui 8](images/jiahui8.png) 
+
+### Bitácora Ximena Araya Brenes
+
+![Bitácora Ximena 1](images/ximena1.png) 
+
+![Bitácora Ximena 2](images/ximena2.png) 
+
+![Bitácora Ximena 3](images/ximena3.png) 
+
+![Bitácora Ximena 4](images/ximena4.png) 
+
+![Bitácora Ximena 5](images/ximena5.png) 
+
+![Bitácora Ximena 6](images/ximena6.png) 
+
+![Bitácora Ximena 7](images/ximena7.png) 
+
+![Bitácora Ximena 8](images/ximena8.png) 
+
+![Bitácora Ximena 9](images/ximena9.png) 
